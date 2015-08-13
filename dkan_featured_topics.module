@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DKAN Featured Topics feature.
+ */
+
+include_once 'dkan_featured_topics.features.inc';
