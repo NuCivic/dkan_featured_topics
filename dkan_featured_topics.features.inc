@@ -5,10 +5,28 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function dkan_featured_topics_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function dkan_featured_topics_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_default_page_manager_pages_alter().
+ */
+function dkan_featured_topics_default_page_manager_pages_alter(&$data) {
+  if (isset($data['datasets'])) {
+    $data['datasets']->default_handlers['page_datasets_panel_context']->conf['display']->panels['sidebar'][0] = 'new-e73f5821-fb8b-44c1-9738-7217986ac3df'; /* WAS: 'new-af542600-62f2-4baf-b2c3-12b9ee1d59ba' */
+  }
 }
 
 /**
@@ -22,6 +40,13 @@ function dkan_featured_topics_image_default_styles() {
     'label' => 'Topic Medium',
     'effects' => array(
       4 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 200,
@@ -31,6 +56,13 @@ function dkan_featured_topics_image_default_styles() {
         'weight' => 1,
       ),
       5 => array(
+        'label' => 'Define canvas',
+        'help' => 'Define the size of the working canvas and background color, this controls the dimensions of the output image.',
+        'effect callback' => 'canvasactions_definecanvas_effect',
+        'dimensions callback' => 'canvasactions_definecanvas_dimensions',
+        'form callback' => 'canvasactions_definecanvas_form',
+        'summary theme' => 'canvasactions_definecanvas_summary',
+        'module' => 'imagecache_canvasactions',
         'name' => 'canvasactions_definecanvas',
         'data' => array(
           'RGB' => array(
@@ -53,6 +85,13 @@ function dkan_featured_topics_image_default_styles() {
         'weight' => 2,
       ),
       6 => array(
+        'label' => 'Crop',
+        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
+        'effect callback' => 'image_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_crop_form',
+        'summary theme' => 'image_crop_summary',
+        'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
           'width' => 200,
@@ -62,6 +101,7 @@ function dkan_featured_topics_image_default_styles() {
         'weight' => 3,
       ),
     ),
+    'name' => 'topic_medium',
   );
 
   return $styles;
