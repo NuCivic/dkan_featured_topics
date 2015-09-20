@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * dkan_featured_topics.install
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dkan_featured_topics_install() {
+  $item = array(
+    'link_path' => '<front>',
+    'link_title' => 'Topics',
+    'menu_name' => 'main-menu',
+    'weight' => 0,
+    'plid' => 0,
+    'module' => 'menu',
+  );
+  menu_link_save($item);
+}
+
+/**
+ * Added a menu item 'Topics' into the main menu.
+ */
+function dkan_featured_topics_update_7200() {
+  $item = array(
+    'link_path' => '<front>',
+    'link_title' => 'Topics',
+    'menu_name' => 'main-menu',
+    'weight' => 0,
+    'plid' => 0,
+    'module' => 'menu',
+  );
+  menu_link_save($item);
+}
