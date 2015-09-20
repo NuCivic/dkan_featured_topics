@@ -1,0 +1,9 @@
+.footer .topic-image {
+	display: none;
+}
+.footer .dropdown-menu {
+	background: #414980;
+}
+.footer .dropdown-menu .topics-item span {
+	font-size: 0.8em;
+}
