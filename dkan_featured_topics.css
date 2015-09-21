@@ -13,7 +13,7 @@ body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dro
 .dropdown-menu li.topics-item {
   float: left;
   width: 125px;
-  height: 125px;
+  height: 140px;
   text-align: center;
 }
 .navbar-nav > li > .dropdown-menu.topics {
@@ -22,6 +22,16 @@ body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dro
 .dropdown-menu.topics img {
   width: 75px;
   height: 75px;
+}
+.navbar-default .navbar-nav .open .dropdown-toggle .dropdown-menu li a:hover {
+  background-color: #fff;
+}
+.navbar-default .navbar-nav .open .view-dkan-topics-featured .dropdown-menu li > a:hover {
+  background-color: #fff;
+}
+.navbar-default .navbar-nav .open .view-dkan-topics-featured .dropdown-menu li > a {
+  padding: 3px;
+  white-space: normal;
 }
 @media (min-width: 768px) {
   .navbar-nav > li {
