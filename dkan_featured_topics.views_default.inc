@@ -15,14 +15,13 @@ function dkan_featured_topics_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'DKAN Topics featured';
+  $view->human_name = 'DKAN Featured Topics';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Featured Topics';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -57,6 +56,10 @@ function dkan_featured_topics_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -65,8 +68,8 @@ function dkan_featured_topics_views_default_views() {
     'dkan_topics_term' => 'dkan_topics_term',
   );
 
-  /* Display: Featured Topic grid pane */
-  $handler = $view->new_display('panel_pane', 'Featured Topic grid pane', 'panel_pane_1');
+  /* Display: Featured Topic Content Pane */
+  $handler = $view->new_display('panel_pane', 'Featured Topic Content Pane', 'panel_pane_1');
   $handler->display->display_options['pane_title'] = 'Featured Topics Grid';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -77,6 +80,9 @@ function dkan_featured_topics_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Featured Topics Menu List */
+  $handler = $view->new_display('block', 'Featured Topics Menu List', 'block_1');
   $export['dkan_topics_featured'] = $view;
 
   return $export;

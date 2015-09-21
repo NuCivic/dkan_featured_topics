@@ -5,28 +5,10 @@
  */
 
 /**
- * Implements hook_ctools_plugin_api().
- */
-function dkan_featured_topics_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "facetapi" && $api == "facetapi_defaults") {
-    return array("version" => "1");
-  }
-}
-
-/**
  * Implements hook_views_api().
  */
 function dkan_featured_topics_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
-}
-
-/**
- * Implements hook_default_page_manager_pages_alter().
- */
-function dkan_featured_topics_default_page_manager_pages_alter(&$data) {
-  if (isset($data['datasets'])) {
-    $data['datasets']->default_handlers['page_datasets_panel_context']->conf['display']->panels['sidebar'][0] = 'new-e73f5821-fb8b-44c1-9738-7217986ac3df'; /* WAS: 'new-af542600-62f2-4baf-b2c3-12b9ee1d59ba' */
-  }
 }
 
 /**

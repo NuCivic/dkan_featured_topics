@@ -1,0 +1,42 @@
+body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dropdown-menu {
+  padding: 30px;
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.open .dropdown-menu {
+  display: block;
+}
+.dropdown-menu a {
+  color: #2b3076 !important;
+}
+.dropdown-menu li.topics-item {
+  float: left;
+  width: 125px;
+  height: 125px;
+  text-align: center;
+}
+.navbar-nav > li > .dropdown-menu.topics {
+  padding: 30px;
+}
+.dropdown-menu.topics img {
+  width: 75px;
+  height: 75px;
+}
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    float: left;
+    position: inherit;
+  }
+  .navbar-nav > li.open {
+    position: static;
+  }
+  .dropdown-menu {
+    width: 950px;
+    float: left;
+    left: 0;
+    position: relative;
+    background: #FFF !important;
+    color: #2b3076;
+  }
+}
