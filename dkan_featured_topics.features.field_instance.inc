@@ -56,11 +56,11 @@ function dkan_featured_topics_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'dkan_topics_medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -129,7 +129,7 @@ function dkan_featured_topics_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Image');
-  t('Topic');
+  t('Topics');
 
   return $field_instances;
 }
