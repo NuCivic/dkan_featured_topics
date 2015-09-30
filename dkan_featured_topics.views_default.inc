@@ -297,6 +297,9 @@ function dkan_featured_topics_views_default_views() {
   $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1';
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-small btn-primary';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Dataset';
@@ -367,9 +370,8 @@ function dkan_featured_topics_views_default_views() {
     'dkan_topics_term' => 'dkan_topics_term',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'topics';
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $export['topics_page'] = $view;
 
   return $export;
