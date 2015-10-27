@@ -20,5 +20,4 @@ features[image][] = topic_medium
 features[taxonomy][] = dkan_topics_term
 features[views_view][] = dkan_topics_featured
 features_exclude[dependencies][ctools] = ctools
-mtime = 1442805226
-project path = sites/all/modules/contrib
+project path = sites/all/modules/dkan
