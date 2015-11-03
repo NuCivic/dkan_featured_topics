@@ -30,11 +30,10 @@ function dkan_featured_topics_main_menu($variables) {
   if ($variables['element']['#title'] == t('Topics')) {
     $link = ($variables['element']['#href'] == '<front>') ? '/' : $variables['element']['#href'];
     $output .= '<a href="' . $link . '" class="dropdown-toggle" data-toggle="dropdown" data-target="#"> ' . $variables['element']["#title"] . '<b class="caret"></b></a>';
-    //$output .= views_embed_view('topics_list', 'block');
     $output .= views_embed_view('dkan_topics_featured', 'block_1');
   }
   else {
-    $output .= l($variables['element']['#title'], $variables['element']['#href'], $variables['element']);
+    $output .= l($variables['element']['#title'], $variables['element']['#href'], $variables['element']['#localized_options']);
   }
   $output .= '</li>';
   return $output;
