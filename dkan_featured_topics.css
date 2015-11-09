@@ -1,4 +1,5 @@
-body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dropdown-menu {
+body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
+.navbar-default .view-dkan-topics-featured .user-menu .dropdown-menu {
   padding: 30px;
   margin-top: 0;
   border-top-right-radius: 0;
@@ -7,7 +8,7 @@ body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dro
 .navbar-nav .open .dropdown-menu {
   display: block;
 }
-.navbar-nav .dropdown-menu a {
+.navbar-nav .dropdown-menu .featured-topics-menu a {
   color: #2b3076 !important;
 }
 .navbar-nav .dropdown-menu li.topics-item {
@@ -33,15 +34,15 @@ body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dro
   padding: 3px;
   white-space: normal;
 }
-@media (min-width: 768px) {
-  .navbar-nav > li {
+ @media (min-width: 768px) {
+  .navbar-nav .view-dkan-topics-featured > li {
     float: left;
     position: inherit;
   }
-  .navbar-nav > li.open {
+  .navbar-nav .view-dkan-topics-featured > li.open {
     position: static;
   }
-  .navbar-nav .dropdown-menu {
+  .navbar-nav .view-dkan-topics-featured .dropdown-menu {
     width: 950px;
     float: left;
     left: 0;
