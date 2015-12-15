@@ -1,5 +1,4 @@
-body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
-.navbar-default .view-dkan-topics-featured .user-menu .dropdown-menu {
+body .navbar-default .navbar-nav .dropdown-menu, .navbar-default .user-menu .dropdown-menu {
   padding: 30px;
   margin-top: 0;
   border-top-right-radius: 0;
@@ -8,7 +7,7 @@ body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
 .navbar-nav .open .dropdown-menu {
   display: block;
 }
-.navbar-nav .dropdown-menu .featured-topics-menu a {
+.navbar-nav .dropdown-menu a {
   color: #2b3076 !important;
 }
 .navbar-nav .dropdown-menu li.topics-item {
@@ -20,7 +19,7 @@ body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
 .navbar-nav > li > .dropdown-menu.topics {
   padding: 30px;
 }
-.navbar-nav .dropdown-menu.topics img {
+.dropdown-menu.topics img {
   width: 75px;
   height: 75px;
 }
@@ -34,15 +33,15 @@ body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
   padding: 3px;
   white-space: normal;
 }
- @media (min-width: 768px) {
-  .navbar-nav .view-dkan-topics-featured > li {
+@media (min-width: 768px) {
+  .navbar-nav > li {
     float: left;
     position: inherit;
   }
-  .navbar-nav .view-dkan-topics-featured > li.open {
+  .navbar-nav > li.open {
     position: static;
   }
-  .navbar-nav .view-dkan-topics-featured .dropdown-menu {
+  .navbar-nav .dropdown-menu {
     width: 950px;
     float: left;
     left: 0;
