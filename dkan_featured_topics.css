@@ -51,3 +51,19 @@ body .navbar-default .navbar-nav .view-dkan-topics-featured .dropdown-menu,
     color: #2b3076;
   }
 }
+.pane-dkan-topics-featured-panel-pane-1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.view-dkan-topics-featured .row {
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.view-dkan-topics-featured .row .col-xs-12 a {
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+}
